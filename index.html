@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix Guo | Supply Chain Strategist & Operational Leader</title>
+
+    <!-- Meta Tags for LinkedIn / Social Previews -->
+    <meta name="description" content="Personal portfolio of Felix Guo — Rutgers Business School Honors Scholar specializing in Supply Chain Management, Process Optimization, and Strategic Operations.">
+    <meta property="og:title" content="Felix Guo | Supply Chain Strategist & Operational Leader">
+    <meta property="og:description" content="Rutgers Business School Honors Scholar specializing in Supply Chain Management, Process Optimization, and Strategic Operations.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #07090e;
+            --text-main: #f0f4f8;
+            --text-muted: #94a3b8;
+            --accent-1: #6366f1; /* Indigo */
+            --accent-2: #06b6d4; /* Cyan */
+            --accent-3: #3b82f6; /* Blue */
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow Spheres */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(130px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .orb-1 { width: 500px; height: 500px; background: var(--accent-1); top: -150px; left: -100px; }
+        .orb-2 { width: 450px; height: 450px; background: var(--accent-2); bottom: -100px; right: -100px; }
+
+        /* Container Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        /* Status Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent-2);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-2);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-2);
+        }
+
+        /* Header Section */
+        header {
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6.5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 .name-highlight {
+            background: linear-gradient(135deg, #ffffff 40%, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1 .title-gradient {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 680px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+
+        /* Bento Grid Sections */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-category {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-2);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .card p, .card ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+        }
+
+        /* Skill Pill Tags */
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.45);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent-2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glows -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="container">
+        
+        <!-- Status Badge -->
+        <div class="badge">
+            <span class="badge-dot"></span>
+            Rutgers Business School • Honors College
+        </div>
+
+        <!-- Hero Header -->
+        <header>
+            <h1>
+                <span class="name-highlight">Felix Guo</span><br>
+                <span class="title-gradient">Supply Chain Strategist &amp; Analytics Leader</span>
+            </h1>
+            <p class="subtitle">
+                Merging process optimization, technical modeling, and strategic negotiation to build resilient supply chains and solve complex business operational challenges.
+            </p>
+        </header>
+
+        <!-- Section: Key Highlights / Track Record -->
+        <h2 class="section-title">Impact Highlights</h2>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-category">Operations &amp; Negotiation</div>
+                <h3>Negotiation &amp; Profit Growth</h3>
+                <p>Optimized logistics (equipment &amp; buffet management) and negotiated high-value vendor contracts as Student Government Vice President, delivering the highest event revenue in 9 years.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-category">Social Impact</div>
+                <h3>UNICEF Strategic Partnerships</h3>
+                <p>Reestablished an inactive educational partnership in Dalian, China, constructing a multi-year volunteer framework and driving fundraising efforts for primary education resources.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-category">Leadership</div>
+                <h3>Economic &amp; Model UN Leadership</h3>
+                <p>Presided as President of the Model UN Economics Crisis Committee and led social media growth strategies for large-scale event marketing and peer counseling initiatives.</p>
+            </div>
+        </div>
+
+        <!-- Section: Skills & Technical Toolkit -->
+        <h2 class="section-title">Technical Capabilities &amp; Expertise</h2>
+        <div class="grid-3" style="margin-bottom: 3rem;">
+            <div class="card">
+                <div class="card-category">Core Business</div>
+                <h3>Supply Chain &amp; Strategy</h3>
+                <ul>
+                    <li>Process Optimization (Lean &amp; Six Sigma basics)</li>
+                    <li>Structured Problem Solving &amp; Decision Making</li>
+                    <li>Vendor Contract Negotiation &amp; Logistics Planning</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-category">Analytics &amp; Software</div>
+                <h3>Data &amp; Technology</h3>
+                <ul>
+                    <li>Advanced Excel (Pivot Tables, VLOOKUP, Financial Modeling)</li>
+                    <li>HTML &amp; Java Programming</li>
+                    <li>PowerPoint &amp; Executive Presentation Design</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-category">Global Competency</div>
+                <h3>Languages &amp; Pursuits</h3>
+                <ul>
+                    <li>Chinese (Native), English (Fluent), French (Basic)</li>
+                    <li>Financial Investing, Case Competitions, Debate</li>
+                    <li>Competitive Tennis &amp; Long-Distance Running</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Action Links -->
+        <div class="actions">
+            <a href="https://www.linkedin.com/in/felix-guo-6281513a9/" class="btn btn-primary" target="_blank" rel="noopener">
+                <svg height="18" width="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                Connect on LinkedIn
+            </a>
+            <a href="mailto:zg288@scarletmail.rutgers.edu" class="btn btn-secondary">
+                Get in Touch
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Designed for Felix Guo • Rutgers Business School Class of 2029</p>
+    </footer>
+
+</body>
+</html>
