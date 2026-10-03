@@ -71,6 +71,28 @@
             width: 100%;
         }
 
+        /* Headshot Avatar Styles */
+        .avatar-container {
+            margin-bottom: 1.75rem;
+        }
+
+        .avatar-img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--glass-border);
+            padding: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .avatar-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.5);
+        }
+
         /* Status Badge */
         .badge {
             display: inline-flex;
@@ -205,23 +227,6 @@
             color: var(--accent-1);
         }
 
-        /* Skill Pill Tags */
-        .pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1rem;
-        }
-
-        .pill {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            color: var(--text-main);
-        }
-
         /* Action Buttons */
         .actions {
             display: flex;
@@ -296,14 +301,19 @@
 
     <div class="container">
         
-        <!-- Status Badge -->
-        <div class="badge">
-            <span class="badge-dot"></span>
-            Rutgers Business School • Honors College
-        </div>
-
         <!-- Hero Header -->
         <header>
+            <!-- Headshot Image Access -->
+            <div class="avatar-container">
+                <img src="headhshot.jpg" alt="Felix Guo Headshot" class="avatar-img">
+            </div>
+
+            <!-- Status Badge -->
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Rutgers Business School • Honors College
+            </div>
+
             <h1>
                 <span class="name-highlight">Felix Guo</span><br>
                 <span class="title-gradient">Supply Chain Strategist &amp; Analytics Leader</span>
